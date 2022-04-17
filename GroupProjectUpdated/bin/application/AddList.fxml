@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddListController">
+   <left>
+      <AnchorPane prefHeight="500.0" prefWidth="600.0" styleClass="bodybg" stylesheets="@application.css" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="20.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grocery Items" />
+            <Text layoutX="270.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Exipiration date" />
+            <Text layoutX="464.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cost" />
+            <TextArea fx:id="name2" layoutX="19.0" layoutY="218.0" onMouseClicked="#nclick2" prefHeight="32.0" prefWidth="185.0" promptText="Item 2" />
+            <TextArea fx:id="exp2" layoutX="274.0" layoutY="218.0" onMouseClicked="#eclick2" prefHeight="32.0" prefWidth="110.0" promptText="Expiraion Date" />
+            <TextArea fx:id="exp3" layoutX="274.0" layoutY="275.0" onMouseClicked="#eclick3" prefHeight="32.0" prefWidth="110.0" promptText="Expiraion Date" />
+            <TextArea fx:id="exp1" layoutX="274.0" layoutY="159.0" onMouseClicked="#eclick1" prefHeight="32.0" prefWidth="110.0" promptText="Expiraion Date" />
+            <TextArea fx:id="exp4" layoutX="274.0" layoutY="333.0" onMouseClicked="#eclick4" prefHeight="32.0" prefWidth="110.0" promptText="Expiraion Date" />
+            <TextArea fx:id="exp5" layoutX="274.0" layoutY="390.0" onMouseClicked="#eclick5" prefHeight="32.0" prefWidth="110.0" promptText="Expiraion Date" />
+            <Text layoutX="194.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Items Bought">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Text>
+            <TextArea fx:id="cost1" layoutX="464.0" layoutY="159.0" onMouseClicked="#cclick1" prefHeight="32.0" prefWidth="93.0" promptText="Item Price" />
+            <TextArea fx:id="cost2" layoutX="464.0" layoutY="218.0" onMouseClicked="#cclick2" prefHeight="32.0" prefWidth="93.0" promptText="Item Price" />
+            <TextArea fx:id="cost3" layoutX="464.0" layoutY="275.0" onMouseClicked="#cclick3" prefHeight="32.0" prefWidth="93.0" promptText="Item Price" />
+            <TextArea fx:id="cost4" layoutX="465.0" layoutY="333.0" onMouseClicked="#cclick4" prefHeight="32.0" prefWidth="93.0" promptText="Item Price" />
+            <TextArea fx:id="cost5" layoutX="464.0" layoutY="390.0" onMouseClicked="#cclick5" prefHeight="32.0" prefWidth="93.0" promptText="Item Price" />
+            <TextArea fx:id="name3" layoutX="19.0" layoutY="275.0" onMouseClicked="#nclick3" prefHeight="32.0" prefWidth="185.0" promptText="Item 3" />
+            <TextArea fx:id="name1" layoutX="19.0" layoutY="159.0" onMouseClicked="#nclick1" prefHeight="32.0" prefWidth="185.0" promptText="Item 1" />
+            <TextArea fx:id="name4" layoutX="19.0" layoutY="333.0" onMouseClicked="#nclick4" prefHeight="32.0" prefWidth="185.0" promptText="Item 4" />
+            <TextArea fx:id="name5" layoutX="19.0" layoutY="390.0" onMouseClicked="#nclick5" prefHeight="32.0" prefWidth="185.0" promptText="Item 5" />
+            <Button layoutX="427.0" layoutY="441.0" mnemonicParsing="false" onAction="#addList" prefHeight="31.0" prefWidth="116.0" style="-fx-background-radius: 10pc;" text="Add to List" />
+         </children>
+      </AnchorPane>
+   </left>
+</BorderPane>

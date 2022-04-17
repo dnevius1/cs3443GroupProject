@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="RecipeBookPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RecipeBookController">
+   <children>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0">
+         <children>
+            <Pane prefHeight="65.0" prefWidth="700.0" style="-fx-background-color: green;">
+               <children>
+                  <Label alignment="TOP_LEFT" layoutX="255.0" layoutY="14.0" text="RECIPE BOOK" textFill="#dee8d0">
+                     <font>
+                        <Font name="Lucida Calligraphy Italic" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="260.0" prefWidth="700.0">
+               <children>
+                  <Pane minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="350.0">
+                     <children>
+                        <TextField fx:id="recipeName" layoutX="276.0" layoutY="13.0" promptText="ENTER RECIPE NAME" />
+                     </children>
+                  </Pane>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="175.0" prefWidth="700.0">
+                     <children>
+                        <TableView fx:id="ingredients" layoutX="208.0" layoutY="17.0" prefHeight="148.0" prefWidth="285.0" />
+                        <Label layoutX="298.0" text="Select Ingrediants:">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="700.0">
+                     <children>
+                        <Button fx:id="addToBook" layoutX="312.0" layoutY="2.0" mnemonicParsing="false" onAction="#addNewRecipie" text="Add Recipe" />
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+            <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="700.0" style="-fx-background-color: green;" />
+            <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="275.0" prefWidth="700.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="220.0" minHeight="220.0" prefHeight="220.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="135.0" minHeight="10.0" prefHeight="79.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                     <children>
+                        <Label text="RECIPES" underline="true">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <ListView fx:id="listView" prefHeight="200.0" prefWidth="200.0" />
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                     <children>
+                        <Label text="INGREDIENTS" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <ScrollPane maxHeight="-Infinity" prefHeight="125.0" prefWidth="200.0">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <content>
+                              <Text fx:id="ingrText" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="300.0" />
+                           </content>
+                        </ScrollPane>
+                        <Pane maxHeight="-Infinity" prefHeight="50.0" prefWidth="200.0">
+                           <children>
+                              <Label fx:id="exprMessage" layoutX="105.0" layoutY="2.0" opacity="0.0" text="!! EXPIRED ITMES !!" textFill="#972d2d">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <ScrollPane fx:id="exprScrollPane" hbarPolicy="NEVER" opacity="0.0" prefHeight="50.0" prefWidth="200.0">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <content>
+                              <Text fx:id="exprText" fill="#972d2d" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="295.0" />
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </VBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <Label text="Total Cost:">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="totalCost" alignment="CENTER_RIGHT" contentDisplay="TOP" prefHeight="17.0" prefWidth="100.0" text="\$0.00" />
+                     </children>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.rowIndex="1">
+                     <children>
+                        <Button fx:id="showBttn" mnemonicParsing="false" onAction="#displayInfo" text="Show" />
+                        <Button fx:id="deleteBttn" mnemonicParsing="false" onAction="#deleteRecipie" text="Delete" />
+                        <Button fx:id="mainMenu" mnemonicParsing="false" onAction="#gotoMainMenu" prefHeight="39.0" prefWidth="126.0" text="Main Menu" />
+                     </children>
+                  </HBox>
+               </children>
+            </GridPane>
+            <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="700.0" style="-fx-background-color: GREEN;" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
