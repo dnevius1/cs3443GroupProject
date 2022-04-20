@@ -2,7 +2,8 @@ package application;
 
 import java.util.ArrayList;
 
-
+	/* Stores items that user inputs in the AddList scene
+	 * into an ArrayList*/
 	public class AddListModel {
 		
 		public static ArrayList<String> add(String name, String exp, String cost){

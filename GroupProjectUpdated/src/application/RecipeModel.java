@@ -38,7 +38,18 @@ public class RecipeModel{
     			String ingrBuffer = "";
     	    	Iterator<Ingredient> i = selectedIngr.iterator();
     	    	while(i.hasNext()) {
-    	    		ingrBuffer += i.next().getName().trim() + " ";
+    	    		String buffer = i.next().getName().trim();
+    	    		if (buffer.contains(" ")) {
+    	    			String [] bufferedArray = buffer.split(" ");
+    	    			buffer = "";
+    	    			for (int a = 0 ; a < bufferedArray.length; a++) {
+    	    				buffer += bufferedArray[a];
+    	    				if (a != bufferedArray.length - 1) {
+    	    					buffer += "=";
+    	    				}
+    	    			}
+    	    		}
+    	    		ingrBuffer += buffer + " ";
     	    	}
     	    	ingrBuffer.trim();
 
@@ -75,7 +86,8 @@ public class RecipeModel{
 			properties.remove(buffer);
 			properties.store(writer, null);
 			writer.close();
-		
+			recipeMap.remove(buffer);
+			
 			alert.setHeaderText("SUCCESFULLY DELETED");
 			alert.setContentText(buffer + " was deleted.");
 			alert.showAndWait();
@@ -101,14 +113,17 @@ public class RecipeModel{
 		HashMap<String, Ingredient> initalMap = RecipeModel.getInitalMap();
 		
 		arryBuffer = recipeMap.get(buffer).split(" ");
-		
+		for (int i = 0; i < arryBuffer.length; i++) {
+			
+			arryBuffer[i] = arryBuffer[i].replace('=', ' ');
+		}
+
 		for (int i = 0; i < arryBuffer.length; i++) {
 			try {
 				recipeTotal += Double.parseDouble(initalMap.get(arryBuffer[i]).getCost());
 			} catch (NumberFormatException e) {
 				System.out.println("RecipeModel.107: Display failed: attempted to parse " + arryBuffer[i] + " into double.");
 			}
-				
 			if (!initalMap.get(arryBuffer[i]).getIsExp()) {
 				nonExprItems += initalMap.get(arryBuffer[i]).getName() + ", ";
 			}
@@ -116,7 +131,8 @@ public class RecipeModel{
 				exprItems += initalMap.get(arryBuffer[i]).getName() + ", ";
 				expr = true;
 			}
-		}
+			
+		} 
     	
     	return expr;
     }
@@ -135,8 +151,8 @@ public class RecipeModel{
 				recipeMap.put((String)key, properties.getProperty((String) key));
 			}
 		}
-		else 
-			System.out.println("recipe is not empty");
+		//else 
+		//	System.out.println("recipe is not empty");
 		initalMap = listOfIngrediants.getHashIngr();
 		for(String key: initalMap.keySet()) {
 			listData.add(initalMap.get(key));
@@ -208,6 +224,5 @@ public class RecipeModel{
 	public static void setNonExprItems(String nonExprItems) {
 		RecipeModel.nonExprItems = nonExprItems;
 	}
-	
-
 }
+

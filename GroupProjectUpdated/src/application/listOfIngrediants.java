@@ -34,7 +34,7 @@ public class listOfIngrediants {
 						costOfIngredients+=Double.parseDouble(buffer[2]);
 						hashIngr.putIfAbsent(buffer[0], a);
 					} catch (NumberFormatException e) {
-						System.out.println("listOfIngredients.30: NumberFormatException: attempted to parse " + buffer[2] + " as a double");
+						System.out.println("listOfIngredients: NumberFormatException: attempted to parse " + buffer[2] + " as a double");
 					}
 				}
 			}

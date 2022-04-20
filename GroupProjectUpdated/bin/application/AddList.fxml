@@ -35,6 +35,7 @@
             <TextArea fx:id="name4" layoutX="19.0" layoutY="333.0" onMouseClicked="#nclick4" prefHeight="32.0" prefWidth="185.0" promptText="Item 4" />
             <TextArea fx:id="name5" layoutX="19.0" layoutY="390.0" onMouseClicked="#nclick5" prefHeight="32.0" prefWidth="185.0" promptText="Item 5" />
             <Button layoutX="427.0" layoutY="441.0" mnemonicParsing="false" onAction="#addList" prefHeight="31.0" prefWidth="116.0" style="-fx-background-radius: 10pc;" text="Add to List" />
+            <Button fx:id="mainMenu" layoutX="274.0" layoutY="441.0" mnemonicParsing="false" onAction="#gotoMainMenu" prefHeight="33.0" prefWidth="133.0" style="-fx-background-radius: 10pc;" text="Main  Menu" />
          </children>
       </AnchorPane>
    </left>

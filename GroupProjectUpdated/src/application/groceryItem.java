@@ -1,12 +1,13 @@
 package application;
-
+/* Stores the individual values of the grocery
+ * item input by the user*/
 public class groceryItem {
 	
 	private String name;
 	private String exp;
 	private String cost;
 	
-	
+	/*Constructor*/
 	public groceryItem(String name, String exp, String cost) {
 		
 		this.name = name;
@@ -15,7 +16,7 @@ public class groceryItem {
 		
 	}
 
-
+/*Getters and Setters*/
 	public String getName() {
 		return name;
 	}
